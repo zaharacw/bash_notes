@@ -1,0 +1,22 @@
+#################### Terminal prompt ####################
+export PS1="\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;9m\]\$(git_branch)\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w \\$ \[$(tput sgr0)\]"
+
+################### #Functions ####################
+#-----shows you what branch you are currently on-----#
+git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+
+#################### Aliases ####################
+#-----Show and Hide hidden files-----#
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+#-----Open Sublime-----#
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+#################### Other Shortcut Keys ##########
+#-----Allows history searching-----#
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
