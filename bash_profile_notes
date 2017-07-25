@@ -20,3 +20,5 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 #-----Allows history searching-----#
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+
+
